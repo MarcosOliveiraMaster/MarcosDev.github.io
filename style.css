@@ -273,3 +273,122 @@ img {
     order: 2;
   }
 }
+
+/* Menu Hamburguer (Mobile) */
+.hamburguer-btn {
+  display: none; /* Escondido em desktop */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .hamburguer-btn {
+    display: block; /* Visível em mobile */
+    order: 1; /* Posiciona à direita */
+  }
+  .navbar {
+    display: none; /* Esconde a navbar padrão */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  .navbar.active {
+    display: flex; /* Mostra quando ativo */
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+.dark-mode .header,
+.dark-mode .card-box,
+.dark-mode .sidebar,
+.dark-mode .cta-box {
+  background-color: #2d2d2d;
+  color: #f0f0f0;
+}
+.dark-mode .navbar a {
+  color: #f0f0f0;
+}
+
+
+/* [Seção existente - mantida igual até o final do arquivo] */
+
+/* =============== MOBILE (max-width: 992px) =============== */
+@media screen and (max-width: 992px) {
+  /* Header compacto */
+  .header {
+    padding: 15px 5%;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  /* Menu hamburguer (substitui a navbar) */
+  .navbar {
+    display: none; /* Esconde links tradicionais */
+  }
+  .navbar-mobile {
+    display: block;
+  }
+  .hamburguer {
+    display: block;
+    width: 24px;
+    cursor: pointer;
+  }
+  
+  /* Sidebar (perfil) movido para o final */
+  .sidebar {
+    order: 2;
+    margin-top: 30px;
+  }
+  
+  /* Grid de ícones: 3 colunas e popup ajustado */
+  .expert-area .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .icon-container {
+    position: relative;
+  }
+  #hover-popup {
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 200px;
+  }
+  
+  /* Botão dark mode ativado */
+  .btn-darkmode {
+    display: block;
+    margin-left: 15px;
+  }
+  
+  /* Ajustes de toque */
+  a, button {
+    min-height: 44px; /* Tamanho acessível */
+  }
+}
+
+/* =============== MOBILE PEQUENO (max-width: 576px) =============== */
+@media screen and (max-width: 576px) {
+  /* Header ainda mais compacto */
+  .header {
+    padding: 10px 5%;
+  }
+  
+  /* Botões de contato em linha (se couber) */
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
